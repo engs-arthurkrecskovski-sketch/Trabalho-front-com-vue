@@ -7,3 +7,8 @@
     <img src="/whatsapp.jpg" class="whatsapp-float" alt="WhatsApp" />
   </a>
 </template>
+
+<script setup>
+import Sidebar from './components/Sidebar.vue'
+import { RouterView } from 'vue-router'
+</script>
