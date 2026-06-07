@@ -79,3 +79,15 @@ const route = useRoute()
   font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
 }
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.sidebar a.active {
+  background-color: #1a1c1e;
+  color: #ffffff !important;
+  border-left: 4px solid #c31520;
+  font-weight: 600;
+}
