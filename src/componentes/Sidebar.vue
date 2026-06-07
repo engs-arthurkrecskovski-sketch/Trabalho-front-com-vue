@@ -91,3 +91,17 @@ const route = useRoute()
   border-left: 4px solid #c31520;
   font-weight: 600;
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100% !important;
+    height: auto;
+    position: fixed;
+    padding: 0.5rem 0;
+    flex-direction: column;
+    border-right: none;
+    border-bottom: 1px solid #1a1c1e;
+}
+}
+
+
