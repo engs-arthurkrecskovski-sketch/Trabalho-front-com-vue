@@ -67,3 +67,15 @@ const route = useRoute()
 
 .sidebar ul { list-style: none; padding: 0; }
 
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #cbd5e1;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid transparent;
+  transition: 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+}
