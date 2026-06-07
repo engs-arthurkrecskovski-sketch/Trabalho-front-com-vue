@@ -104,4 +104,15 @@ const route = useRoute()
 }
 }
 
+  .logo-text-container {
+    margin-bottom: 0.5rem;
+    justify-content: center;
+  }
+  .sidebar ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
 
