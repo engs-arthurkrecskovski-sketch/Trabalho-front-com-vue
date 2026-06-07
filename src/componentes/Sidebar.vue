@@ -56,3 +56,14 @@ const route = useRoute()
 
 .logo-icon-red { color: #c31520; font-size: 1.6rem; }
 
+
+.sidebar h2 {
+  color: white;
+  font-size: 1.4rem;
+  margin: 0;
+  font-family: 'Chakra Petch', sans-serif;
+}
+.sidebar h2 span { color: #c31520; }
+
+.sidebar ul { list-style: none; padding: 0; }
+
