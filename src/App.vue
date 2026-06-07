@@ -12,3 +12,19 @@
 import Sidebar from './components/Sidebar.vue'
 import { RouterView } from 'vue-router'
 </script>
+
+<style>
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  z-index: 9999;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
+}
+.whatsapp-float:hover { transform: scale(1.1); }
+</style>
