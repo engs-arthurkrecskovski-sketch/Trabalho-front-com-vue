@@ -46,3 +46,13 @@ const route = useRoute()
   transition: all 0.3s ease;
 }
 
+.logo-text-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.logo-icon-red { color: #c31520; font-size: 1.6rem; }
+
