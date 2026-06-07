@@ -1,11 +1,9 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
-</template>
+  <Sidebar />
+  <RouterView />
 
-<style scoped></style>
+  
+  <a href="https://wa.me/5542999809581" target="_blank">
+    <img src="/whatsapp.jpg" class="whatsapp-float" alt="WhatsApp" />
+  </a>
+</template>
