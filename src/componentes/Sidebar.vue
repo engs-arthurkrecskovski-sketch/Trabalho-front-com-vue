@@ -29,3 +29,20 @@ const menuItems = [
 
 const route = useRoute()
 </script>
+
+<style scoped>
+.sidebar {  
+  width: 280px;
+  height: 100vh;
+  background-color: #111111;
+  padding: 2rem 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  border-right: 1px solid #1a1c1e;
+  transition: all 0.3s ease;
+}
+
