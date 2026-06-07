@@ -115,4 +115,21 @@ const route = useRoute()
     flex-wrap: wrap;
   }
 
+    .sidebar a {
+    padding: 0.6rem;
+    font-size: 0.7rem;
+    flex-direction: column;
+    gap: 4px;
+    border-left: none;
+    text-align: center;
+    flex: 1;
+  }
+  .sidebar a.active {
+    border-left: none;
+    border-bottom: 3px solid #c31520;
+  }
+
+</style>
+
+
 
