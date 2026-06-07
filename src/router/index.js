@@ -5,3 +5,11 @@ import Clientes    from '../views/Clientes.vue'
 import Agendamento from '../views/Agendamento.vue'
 import Historico   from '../views/Historico.vue'
 import Interacao   from '../views/Interacao.vue'
+
+const routes = [
+  { path: '/',            component: Dashboard,   meta: { title: 'Painel Geral' } },
+  { path: '/clientes',    component: Clientes,    meta: { title: 'Clientes' } },
+  { path: '/agendamento', component: Agendamento, meta: { title: 'Agendamento' } },
+  { path: '/historico',   component: Historico,   meta: { title: 'Histórico' } },
+  { path: '/interacao',   component: Interacao,   meta: { title: 'Interação com Cliente' } },
+]
