@@ -13,3 +13,14 @@ const routes = [
   { path: '/historico',   component: Historico,   meta: { title: 'Histórico' } },
   { path: '/interacao',   component: Interacao,   meta: { title: 'Interação com Cliente' } },
 ]
+
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes,
+})
+
+router.afterEach((to) => {
+  document.title = `${to.meta.title} | REALCARS`
+})
+
+export default router
