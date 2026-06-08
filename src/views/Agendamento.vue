@@ -225,3 +225,27 @@ function concluirAgendamento(index) {
   box-shadow: 0 15px 35px rgba(0,0,0,0.4);
   animation: aparecerBox 1s ease;
 }
+
+.form-group { margin-bottom: 1.5rem; }
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ddd;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+select, input, textarea {
+  width: 100%;
+  padding: 14px;
+  background-color: #2c2f33;
+  border: 1px solid #3e4247;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.3s ease;
+}
