@@ -63,3 +63,10 @@
                   <span v-else class="txt-ok">—</span>
                 </td>
               </tr>
+
+              <tr v-if="historicoFiltrado.length === 0">
+                <td colspan="5" class="sem-resultado">Nenhum resultado encontrado.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
