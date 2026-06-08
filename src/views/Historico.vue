@@ -257,3 +257,14 @@ th {
 .th-sort i { margin-left: 6px; font-size: 0.7rem; }
 .text-muted { color: #555; }
 
+td {
+  font-family: 'Open Sans', sans-serif;
+  padding: 18px 15px;
+  border-bottom: 1px solid #2c2f33;
+  color: #ddd;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+tr:hover td { background-color: rgba(255, 255, 255, 0.02); color: #fff; }
+
