@@ -350,3 +350,19 @@ select:focus, input:focus, textarea:focus {
   font-size: 0.78rem;
   transition: 0.3s;
 }
+
+.btn-concluir:hover { background: rgba(16, 185, 129, 0.2); }
+
+@keyframes aparecerBox {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .box-agendar { padding: 1.5rem; }
+  .form-row { flex-direction: column; gap: 0; }
+  .header-page h1 { font-size: 1.8rem; }
+  .lista-header { flex-direction: column; align-items: flex-start; }
+  .filtro-select { width: 100%; }
+}
+</style>
