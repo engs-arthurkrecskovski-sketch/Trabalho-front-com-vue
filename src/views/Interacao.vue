@@ -124,3 +124,17 @@
               <i class="fas fa-save"></i> Salvar Feedback
             </button>
           </div>
+
+          <div class="feedbacks-salvos" v-if="feedbacks.length > 0">
+            <h4><i class="fas fa-clipboard-list"></i> Feedbacks Recentes</h4>
+            <div v-for="(fb, i) in feedbacks" :key="i" class="feedback-item">
+              <div class="fb-topo">
+                <strong>{{ fb.cliente }}</strong>
+                <div class="fb-estrelas">
+                  <i v-for="n in 5" :key="n" class="fas fa-star" :class="{ lit: n <= fb.nota }"></i>
+                </div>
+              </div>
+              <p v-if="fb.texto">{{ fb.texto }}</p>
+              <span class="fb-hora">{{ fb.hora }}</span>
+            </div>
+          </div>
