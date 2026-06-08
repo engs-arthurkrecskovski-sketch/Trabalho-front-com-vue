@@ -58,3 +58,17 @@
               </div>
             </template>
           </div>
+
+          <div class="chat-input-area" :class="{ disabled: !clienteSelecionado }">
+            <textarea
+              v-model="novaMensagem"
+              placeholder="Digite uma mensagem para o cliente..."
+              :disabled="!clienteSelecionado"
+              @keydown.enter.prevent="enviarMensagem"
+              rows="2"
+            ></textarea>
+            <button class="btn-enviar" @click="enviarMensagem" :disabled="!clienteSelecionado || !novaMensagem.trim()">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
