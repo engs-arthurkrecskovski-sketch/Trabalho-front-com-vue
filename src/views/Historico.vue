@@ -70,3 +70,14 @@
             </tbody>
           </table>
         </div>
+
+        <div class="rodape-tabela">
+          <span>{{ historicoFiltrado.length }} de {{ historico.length }} registros</span>
+          <button v-if="busca || filtroStatus" class="btn-limpar" @click="limparFiltros">
+            <i class="fas fa-times"></i> Limpar filtros
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</template>
