@@ -140,3 +140,7 @@ const historicoFiltrado = computed(() => {
       return 0
     })
   }
+
+  return lista
+})
+
