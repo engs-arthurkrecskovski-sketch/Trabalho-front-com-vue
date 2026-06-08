@@ -140,3 +140,18 @@ const form = reactive({
   hora: '',
   observacoes: '',
 })
+
+
+const erros = reactive({ cliente: '', servico: '', data: '', hora: '' })
+
+
+const filtroStatus = ref('')
+
+
+const dataMinima = new Date().toISOString().split('T')[0]
+
+
+const agendamentosFiltrados = computed(() => {
+  if (!filtroStatus.value) return store.agendamentos
+  return store.agendamentos.filter(a => a.status === filtroStatus.value)
+})
