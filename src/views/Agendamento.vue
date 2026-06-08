@@ -39,3 +39,16 @@
           </select>
           <span v-if="erros.servico" class="msg-erro">{{ erros.servico }}</span>
         </div>
+
+         <div class="form-row">
+          <div class="form-group">
+            <label><i class="fas fa-calendar-day"></i> Data</label>
+            <input v-model="form.data" type="date" :min="dataMinima" :class="{ 'input-erro': erros.data }" />
+            <span v-if="erros.data" class="msg-erro">{{ erros.data }}</span>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-clock"></i> Horário</label>
+            <input v-model="form.hora" type="time" :class="{ 'input-erro': erros.hora }" />
+            <span v-if="erros.hora" class="msg-erro">{{ erros.hora }}</span>
+          </div>
+        </div>
