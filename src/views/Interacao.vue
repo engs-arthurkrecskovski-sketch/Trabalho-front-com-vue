@@ -166,3 +166,74 @@ const mensagensAtivas = computed(() => {
   const chave = clienteSelecionado.value.nome
   return historicoMensagens[chave] || []
 })
+
+function trocarCliente() {
+  const chave = clienteSelecionado.value?.nome
+  if (chave && !historicoMensagens[chave]) {
+    historicoMensagens[chave] = [
+      {
+        tipo: 'oficina',
+        texto: `Olá, ${clienteSelecionado.value.nome}! Seu veículo está em análise. Entraremos em contato em breve.`,
+        hora: horaAtual(),
+      }
+    ]
+  }
+  nextTick(rolarParaBaixo)
+}
+
+function enviarMensagem() {
+  if (!clienteSelecionado.value || !novaMensagem.value.trim()) return
+  const chave = clienteSelecionado.value.nome
+  if (!historicoMensagens[chave]) historicoMensagens[chave] = []
+  historicoMensagens[chave].push({
+    tipo: 'oficina',
+    texto: novaMensagem.value.trim(),
+    hora: horaAtual(),
+  })
+  novaMensagem.value = ''
+  nextTick(rolarParaBaixo)
+}
+
+function rolarParaBaixo() {
+  if (chatBox.value) {
+    chatBox.value.scrollTop = chatBox.value.scrollHeight
+  }
+}
+
+const notaFeedback = ref(0)
+const hoverNota = ref(0)
+const textoFeedback = ref('')
+const feedbacks = ref([])
+
+const toastVisivel = ref(false)
+const toastMsg = ref('')
+
+function salvarFeedback() {
+  if (!clienteSelecionado.value || notaFeedback.value === 0) return
+  feedbacks.value.unshift({
+    cliente: clienteSelecionado.value.nome,
+    nota: notaFeedback.value,
+    texto: textoFeedback.value.trim(),
+    hora: horaAtual(),
+  })
+  notaFeedback.value = 0
+  textoFeedback.value = ''
+  mostrarToast('Feedback salvo com sucesso!')
+}
+
+function mostrarToast(msg) {
+  toastMsg.value = msg
+  toastVisivel.value = true
+  setTimeout(() => { toastVisivel.value = false }, 3000)
+}
+
+function horaAtual() {
+  return new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })
+}
+</script>
+
+<style scoped>
+main {
+  padding: 2.5rem;
+  min-height: 100vh;
+}
