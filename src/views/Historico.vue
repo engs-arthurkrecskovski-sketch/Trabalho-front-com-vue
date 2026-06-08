@@ -247,3 +247,13 @@ th {
   letter-spacing: 1px;
   border-bottom: 1px solid #2c2f33;
 }
+
+.th-sort {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+.th-sort:hover { color: #e63946; }
+.th-sort i { margin-left: 6px; font-size: 0.7rem; }
+.text-muted { color: #555; }
+
