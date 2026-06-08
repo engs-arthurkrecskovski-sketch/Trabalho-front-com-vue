@@ -52,3 +52,12 @@
             <span v-if="erros.hora" class="msg-erro">{{ erros.hora }}</span>
           </div>
         </div>
+
+         <div class="form-group">
+          <label><i class="fas fa-comment-dots"></i> Observações</label>
+          <textarea
+            v-model="form.observacoes"
+            rows="3"
+            placeholder="Detalhes adicionais sobre o veículo ou serviço..."
+          ></textarea>
+        </div>
