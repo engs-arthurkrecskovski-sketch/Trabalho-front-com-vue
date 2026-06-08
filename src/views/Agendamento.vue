@@ -302,3 +302,27 @@ select:focus, input:focus, textarea:focus {
   border: 1px solid #2c2f33;
   animation: aparecerBox 0.5s ease;
 }
+
+.lista-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lista-header h3 { color: white; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+.lista-header h3 i { color: #e63946; }
+
+.filtro-select { width: auto; padding: 8px 12px; font-size: 0.85rem; }
+
+.ag-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: #25282c;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
