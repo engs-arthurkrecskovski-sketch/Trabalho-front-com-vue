@@ -85,3 +85,23 @@
           :key="i"
           class="ag-item"
         >
+
+        <div class="ag-info">
+            <strong>{{ ag.cliente }}</strong>
+            <span>{{ ag.servico }} — {{ ag.data }} às {{ ag.hora }}</span>
+            <span v-if="ag.observacoes" class="obs">💬 {{ ag.observacoes }}</span>
+          </div>
+          <div class="ag-acoes">
+            <span class="badge" :class="ag.status === 'Concluído' ? 'badge-verde' : 'badge-amarelo'">
+              {{ ag.status }}
+            </span>
+            <button
+              v-if="ag.status === 'Pendente'"
+              class="btn-concluir"
+              @click="concluirAgendamento(store.agendamentos.indexOf(ag))"
+              title="Marcar como concluído"
+            >
+              <i class="fas fa-check"></i>
+            </button>
+          </div>
+        </div>
