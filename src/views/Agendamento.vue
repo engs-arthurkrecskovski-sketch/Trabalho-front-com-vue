@@ -128,3 +128,15 @@ const tiposServico = [
   'Suspensão',
   'Outros (Descrever abaixo)',
 ]
+
+
+const clientesDisponiveis = computed(() => store.clientes)
+
+
+const form = reactive({
+  cliente: '',
+  servico: '',
+  data: '',
+  hora: '',
+  observacoes: '',
+})
