@@ -51,3 +51,10 @@
                   <i :class="msg.tipo === 'oficina' ? 'fas fa-tools' : 'fas fa-user'"></i>
                 </div>
               </div>
+
+              <div v-if="mensagensAtivas.length === 0" class="chat-vazio">
+                <i class="fas fa-paper-plane"></i>
+                <p>Nenhuma mensagem ainda. Inicie o atendimento!</p>
+              </div>
+            </template>
+          </div>
