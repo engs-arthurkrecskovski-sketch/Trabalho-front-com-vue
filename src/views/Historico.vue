@@ -236,3 +236,14 @@ function concluirServico(item) {
 
 .table-container { width: 100%; overflow-x: auto; }
 
+table { width: 100%; border-collapse: collapse; min-width: 700px; }
+
+th {
+  font-family: 'Exo 2', sans-serif;
+  padding: 15px;
+  color: #888;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #2c2f33;
+}
