@@ -114,3 +114,17 @@
     </div>
   </main>
 </template>
+
+<script setup>
+import { ref, reactive, computed } from 'vue'
+import { RouterLink } from 'vue-router'
+import { store } from '../store/index.js'
+
+
+const tiposServico = [
+  'Revisão Geral',
+  'Troca de Óleo',
+  'Sistema de Freios',
+  'Suspensão',
+  'Outros (Descrever abaixo)',
+]
