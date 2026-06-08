@@ -85,3 +85,13 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { store } from '../store/index.js'
+
+const historico = computed(() => 
+  store.agendamentos.map(ag => ({
+    cliente: ag.cliente,
+    veiculo: store.clientes.find(c => c.nome === ag.cliente)?.veiculo ?? '—',
+    servico: ag.servico,
+    data:    ag.data,
+    status:  ag.status === 'Concluído' ? 'concluido' : 'pendente',
+  }))
+)
