@@ -72,3 +72,10 @@
       <div v-if="store.agendamentos.length > 0" class="lista-agendamentos">
         <div class="lista-header">
           <h3><i class="fas fa-calendar-check"></i> Agendamentos Realizados</h3>
+
+           <select v-model="filtroStatus" class="filtro-select">
+            <option value="">Todos</option>
+            <option value="Confirmado">Confirmado</option>
+            <option value="Pendente">Pendente</option>
+          </select>
+        </div>
