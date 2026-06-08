@@ -180,3 +180,16 @@ function trocarCliente() {
   }
   nextTick(rolarParaBaixo)
 }
+
+function enviarMensagem() {
+  if (!clienteSelecionado.value || !novaMensagem.value.trim()) return
+  const chave = clienteSelecionado.value.nome
+  if (!historicoMensagens[chave]) historicoMensagens[chave] = []
+  historicoMensagens[chave].push({
+    tipo: 'oficina',
+    texto: novaMensagem.value.trim(),
+    hora: horaAtual(),
+  })
+  novaMensagem.value = ''
+  nextTick(rolarParaBaixo)
+}
