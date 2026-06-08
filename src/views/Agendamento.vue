@@ -187,3 +187,16 @@ function confirmarAgendamento() {
     observacoes: form.observacoes,
     status:      'Pendente',
   })
+
+   form.cliente     = ''
+  form.servico     = ''
+  form.data        = ''
+  form.hora        = ''
+  form.observacoes = ''
+}
+
+
+function concluirAgendamento(index) {
+  store.agendamentos[index].status = 'Concluído'
+}
+</script>
