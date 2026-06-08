@@ -157,3 +157,10 @@ function concluirServico(item) {
 }
 </script>
 
+<style scoped>
+
+.historico-content {
+  width: min(860px, 100%);
+  animation: aparecerTela 0.6s ease;
+}
+
