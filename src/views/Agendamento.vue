@@ -155,3 +155,35 @@ const agendamentosFiltrados = computed(() => {
   if (!filtroStatus.value) return store.agendamentos
   return store.agendamentos.filter(a => a.status === filtroStatus.value)
 })
+
+
+function validar() {
+  let valido = true
+
+  if (!form.cliente) { erros.cliente = 'Selecione um cliente.'; valido = false }
+  else erros.cliente = ''
+
+  if (!form.servico) { erros.servico = 'Selecione o tipo de serviço.'; valido = false }
+  else erros.servico = ''
+
+  if (!form.data) { erros.data = 'Informe a data.'; valido = false }
+  else erros.data = ''
+
+  if (!form.hora) { erros.hora = 'Informe o horário.'; valido = false }
+  else erros.hora = ''
+
+  return valido
+}
+
+
+function confirmarAgendamento() {
+  if (!validar()) return
+
+  store.adicionarAgendamento({
+    cliente:     form.cliente,
+    servico:     form.servico,
+    data:        form.data,
+    hora:        form.hora,
+    observacoes: form.observacoes,
+    status:      'Pendente',
+  })
