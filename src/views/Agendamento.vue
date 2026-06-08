@@ -67,3 +67,8 @@
           FINALIZAR AGENDAMENTO <i class="fas fa-check"></i>
         </button>
       </div>
+
+       
+      <div v-if="store.agendamentos.length > 0" class="lista-agendamentos">
+        <div class="lista-header">
+          <h3><i class="fas fa-calendar-check"></i> Agendamentos Realizados</h3>
