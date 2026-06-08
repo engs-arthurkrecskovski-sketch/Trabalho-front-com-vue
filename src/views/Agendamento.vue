@@ -79,3 +79,9 @@
             <option value="Pendente">Pendente</option>
           </select>
         </div>
+
+         <div
+          v-for="(ag, i) in agendamentosFiltrados"
+          :key="i"
+          class="ag-item"
+        >
