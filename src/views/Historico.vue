@@ -211,3 +211,18 @@ function concluirServico(item) {
 
 .busca-wrapper input:focus { border-color: #e63946; }
 
+.filtro-select {
+  padding: 12px 14px;
+  background-color: #1c1e21;
+  border: 1px solid #3e4247;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.filtro-select:focus { border-color: #e63946; }
+.filtro-select option { background: #1c1e21; }
+
