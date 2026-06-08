@@ -296,3 +296,18 @@ tr:hover td { background-color: rgba(255, 255, 255, 0.02); color: #fff; }
   font-size: 0.85rem;
   color: #888;
 }
+
+.btn-limpar {
+  background: transparent;
+  border: 1px solid #3e4247;
+  color: #888;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-limpar:hover { background: rgba(230, 57, 70, 0.15); color: #e63946; border-color: #e63946; }
