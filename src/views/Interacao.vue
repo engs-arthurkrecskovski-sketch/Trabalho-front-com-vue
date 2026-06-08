@@ -193,3 +193,17 @@ function enviarMensagem() {
   novaMensagem.value = ''
   nextTick(rolarParaBaixo)
 }
+
+function rolarParaBaixo() {
+  if (chatBox.value) {
+    chatBox.value.scrollTop = chatBox.value.scrollHeight
+  }
+}
+
+const notaFeedback = ref(0)
+const hoverNota = ref(0)
+const textoFeedback = ref('')
+const feedbacks = ref([])
+
+const toastVisivel = ref(false)
+const toastMsg = ref('')
