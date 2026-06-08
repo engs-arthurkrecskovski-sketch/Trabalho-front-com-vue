@@ -266,3 +266,39 @@ select:focus, input:focus, textarea:focus {
 .msg-aviso  { color: #f59e0b; font-size: 0.78rem; margin-top: 6px; display: block; }
 .msg-aviso a { color: #e63946; text-decoration: underline; }
 
+.btn-confirmar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 1.2rem;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  margin-top: 10px;
+}
+
+.btn-confirmar:hover {
+  background-color: #c31520;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(230, 57, 70, 0.3);
+}
+
+
+.lista-agendamentos {
+  margin-top: 2rem;
+  background: #1c1e21;
+  border-radius: 20px;
+  padding: 1.5rem;
+  border: 1px solid #2c2f33;
+  animation: aparecerBox 0.5s ease;
+}
