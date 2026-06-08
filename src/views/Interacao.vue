@@ -220,3 +220,20 @@ function salvarFeedback() {
   textoFeedback.value = ''
   mostrarToast('Feedback salvo com sucesso!')
 }
+
+function mostrarToast(msg) {
+  toastMsg.value = msg
+  toastVisivel.value = true
+  setTimeout(() => { toastVisivel.value = false }, 3000)
+}
+
+function horaAtual() {
+  return new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })
+}
+</script>
+
+<style scoped>
+main {
+  padding: 2.5rem;
+  min-height: 100vh;
+}
