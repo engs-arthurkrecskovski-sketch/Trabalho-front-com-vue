@@ -105,3 +105,12 @@
             </button>
           </div>
         </div>
+
+
+         <p v-if="agendamentosFiltrados.length === 0" class="sem-resultado">
+          Nenhum agendamento encontrado.
+        </p>
+      </div>
+    </div>
+  </main>
+</template>
