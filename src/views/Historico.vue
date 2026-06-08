@@ -226,3 +226,13 @@ function concluirServico(item) {
 .filtro-select:focus { border-color: #e63946; }
 .filtro-select option { background: #1c1e21; }
 
+.box-historico {
+  background-color: #1c1e21;
+  padding: 25px;
+  border-radius: 20px;
+  border-top: 4px solid #e63946;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.table-container { width: 100%; overflow-x: auto; }
+
