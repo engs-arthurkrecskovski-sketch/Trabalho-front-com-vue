@@ -148,3 +148,21 @@
     </div>
   </main>
 </template>
+
+<script setup>
+import { store } from '../store/index.js'
+import { ref, computed, reactive, nextTick } from 'vue'
+
+const clientes = computed(() => store.clientes)
+
+const clienteSelecionado = ref(null)
+const novaMensagem = ref('')
+const chatBox = ref(null)
+
+const historicoMensagens = reactive({})
+
+const mensagensAtivas = computed(() => {
+  if (!clienteSelecionado.value) return []
+  const chave = clienteSelecionado.value.nome
+  return historicoMensagens[chave] || []
+})
