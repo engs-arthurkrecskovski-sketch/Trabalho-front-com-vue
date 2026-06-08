@@ -114,3 +114,6 @@ function iconeOrdem(coluna) {
   if (colunaOrdem.value !== coluna) return 'fas fa-sort text-muted'
   return ordemAsc.value ? 'fas fa-sort-up' : 'fas fa-sort-down'
 }
+
+const historicoFiltrado = computed(() => {
+  let lista = [...historico.value]
