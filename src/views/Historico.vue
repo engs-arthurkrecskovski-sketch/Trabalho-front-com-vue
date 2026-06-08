@@ -126,3 +126,17 @@ const historicoFiltrado = computed(() => {
       item.servico.toLowerCase().includes(termo)
     )
   }
+
+    if (filtroStatus.value) {
+    lista = lista.filter(item => item.status === filtroStatus.value)
+  }
+
+  if (colunaOrdem.value) {
+    lista.sort((a, b) => {
+      const va = a[colunaOrdem.value].toLowerCase()
+      const vb = b[colunaOrdem.value].toLowerCase()
+      if (va < vb) return ordemAsc.value ? -1 : 1
+      if (va > vb) return ordemAsc.value ?  1 : -1
+      return 0
+    })
+  }
