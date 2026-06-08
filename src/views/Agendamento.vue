@@ -214,3 +214,14 @@ function concluirAgendamento(index) {
   text-transform: uppercase;
   font-weight: 900;
 }
+
+.header-page p { color: #888; font-size: 1rem; }
+
+.box-agendar {
+  background-color: #1c1e21;
+  padding: 2.5rem;
+  border-radius: 20px;
+  border-top: 4px solid #e63946;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  animation: aparecerBox 1s ease;
+}
