@@ -326,3 +326,27 @@ select:focus, input:focus, textarea:focus {
   border-radius: 12px;
   margin-bottom: 8px;
 }
+
+.ag-info { display: flex; flex-direction: column; gap: 2px; }
+.ag-info strong { color: white; font-size: 0.9rem; }
+.ag-info span   { color: #888; font-size: 0.8rem; }
+.ag-info .obs   { color: #aaa; font-style: italic; }
+
+.badge { padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; white-space: nowrap; }
+.badge-verde   { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+.badge-amarelo { background: rgba(245, 158, 11, 0.2);  color: #f59e0b; }
+
+.sem-resultado { color: #888; text-align: center; font-size: 0.9rem; padding: 1rem; }
+
+.ag-acoes { display: flex; align-items: center; gap: 8px; }
+
+.btn-concluir {
+  background: transparent;
+  border: 1px solid #10b981;
+  color: #10b981;
+  padding: 6px 9px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  transition: 0.3s;
+}
