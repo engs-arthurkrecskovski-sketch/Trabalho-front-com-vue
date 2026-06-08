@@ -327,3 +327,15 @@ tr:hover td { background-color: rgba(255, 255, 255, 0.02); color: #fff; }
 }
 .btn-concluir-hist:hover { background: rgba(16, 185, 129, 0.15); }
 .txt-ok { color: #444; font-size: 0.85rem; }
+
+@keyframes aparecerTela {
+  from { opacity: 0; transform: translateY(50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .header-page h1 { font-size: 1.8rem; }
+  .controles { flex-direction: column; }
+  .filtro-select { width: 100%; }
+}
+</style>
