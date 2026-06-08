@@ -16,3 +16,10 @@
             placeholder="Buscar por cliente, veículo ou serviço..."
           />
         </div>
+
+        <select v-model="filtroStatus" class="filtro-select">
+          <option value="">Todos os status</option>
+          <option value="concluido">Concluídos</option>
+          <option value="pendente">Pendentes</option>
+        </select>
+      </div>
