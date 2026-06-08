@@ -285,3 +285,14 @@ tr:hover td { background-color: rgba(255, 255, 255, 0.02); color: #fff; }
   padding: 2rem;
   font-size: 0.95rem;
 }
+
+.rodape-tabela {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #2c2f33;
+  font-size: 0.85rem;
+  color: #888;
+}
