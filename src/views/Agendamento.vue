@@ -249,3 +249,20 @@ select, input, textarea {
   outline: none;
   transition: 0.3s ease;
 }
+
+select option { background: #2c2f33; }
+
+select:focus, input:focus, textarea:focus {
+  border-color: #e63946;
+  background-color: #32363b;
+}
+
+.input-erro { border-color: #e63946 !important; }
+
+.form-row { display: flex; gap: 15px; }
+.form-row .form-group { flex: 1; }
+
+.msg-erro   { color: #e63946; font-size: 0.78rem; margin-top: 4px; display: block; }
+.msg-aviso  { color: #f59e0b; font-size: 0.78rem; margin-top: 6px; display: block; }
+.msg-aviso a { color: #e63946; text-decoration: underline; }
+
