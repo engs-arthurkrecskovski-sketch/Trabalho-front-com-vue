@@ -29,3 +29,13 @@
             <RouterLink to="/clientes">Cadastrar agora</RouterLink>
           </span>
         </div>
+
+         <div class="form-group">
+          <label><i class="fas fa-oil-can"></i> Tipo de Serviço</label>
+          <select v-model="form.servico" :class="{ 'input-erro': erros.servico }">
+            <option value="" disabled>Selecione o serviço...</option>
+           
+            <option v-for="s in tiposServico" :key="s" :value="s">{{ s }}</option>
+          </select>
+          <span v-if="erros.servico" class="msg-erro">{{ erros.servico }}</span>
+        </div>
