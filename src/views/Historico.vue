@@ -164,3 +164,14 @@ function concluirServico(item) {
   animation: aparecerTela 0.6s ease;
 }
 
+.header-page { text-align: left; margin-bottom: 30px; }
+.header-icon { font-size: 2.5rem; color: #e63946; margin-bottom: 10px; }
+.header-page h1 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.header-page p { font-family: 'Open Sans', sans-serif; color: #888; font-size: 1rem; }
+
