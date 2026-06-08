@@ -100,3 +100,12 @@ const busca         = ref('')
 const filtroStatus  = ref('')
 const colunaOrdem   = ref('')
 const ordemAsc      = ref(true)
+
+function ordenarPor(coluna) {
+  if (colunaOrdem.value === coluna) {
+    ordemAsc.value = !ordemAsc.value
+  } else {
+    colunaOrdem.value = coluna
+    ordemAsc.value = true
+  }
+}
