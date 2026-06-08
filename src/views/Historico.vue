@@ -23,3 +23,22 @@
           <option value="pendente">Pendentes</option>
         </select>
       </div>
+
+       <div class="box-historico">
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th @click="ordenarPor('cliente')" class="th-sort">
+                  Cliente <i :class="iconeOrdem('cliente')"></i>
+                </th>
+                <th>Veículo</th>
+                <th>Serviço</th>
+                <th @click="ordenarPor('data')" class="th-sort">
+                  Data <i :class="iconeOrdem('data')"></i>
+                </th>
+                <th>Status</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tbody>
