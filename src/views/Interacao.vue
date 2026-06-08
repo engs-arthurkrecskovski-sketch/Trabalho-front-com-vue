@@ -92,3 +92,9 @@
               </div>
             </div>
           </div>
+
+            <div class="feedback-box">
+            <div class="feedback-header">
+              <i class="fas fa-star"></i>
+              <h3>Registrar Feedback</h3>
+            </div>
