@@ -200,3 +200,17 @@ function concluirAgendamento(index) {
   store.agendamentos[index].status = 'Concluído'
 }
 </script>
+
+<style scoped>
+
+.agendamento-content { width: min(520px, 100%); }
+
+.header-page { text-align: center; margin-bottom: 2rem; }
+.header-icon { color: #e63946; font-size: 2.5rem; margin-bottom: 10px; }
+.header-page h1 {
+  font-family: 'Chakra Petch', sans-serif;
+  color: white;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
