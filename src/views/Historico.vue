@@ -109,3 +109,8 @@ function ordenarPor(coluna) {
     ordemAsc.value = true
   }
 }
+
+function iconeOrdem(coluna) {
+  if (colunaOrdem.value !== coluna) return 'fas fa-sort text-muted'
+  return ordemAsc.value ? 'fas fa-sort-up' : 'fas fa-sort-down'
+}
