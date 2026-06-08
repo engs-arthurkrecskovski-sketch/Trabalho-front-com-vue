@@ -112,3 +112,15 @@
                 <i class="fas fa-star"></i>
               </span>
             </div>
+
+            <textarea
+              v-model="textoFeedback"
+              placeholder="Observações sobre o atendimento..."
+              rows="3"
+              class="textarea-feedback"
+            ></textarea>
+
+            <button class="btn-feedback" @click="salvarFeedback" :disabled="!clienteSelecionado || notaFeedback === 0">
+              <i class="fas fa-save"></i> Salvar Feedback
+            </button>
+          </div>
