@@ -138,3 +138,13 @@
               <span class="fb-hora">{{ fb.hora }}</span>
             </div>
           </div>
+
+          </div>
+      </div>
+    </div>
+
+    <div class="toast" :class="{ show: toastVisivel }">
+      <i class="fas fa-check-circle"></i> {{ toastMsg }}
+    </div>
+  </main>
+</template>
