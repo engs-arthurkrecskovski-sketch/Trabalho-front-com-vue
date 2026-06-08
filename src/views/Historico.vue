@@ -182,3 +182,17 @@ function concluirServico(item) {
   flex-wrap: wrap;
 }
 
+.busca-wrapper {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.busca-wrapper i {
+  position: absolute;
+  left: 14px;
+  color: #888;
+}
+
