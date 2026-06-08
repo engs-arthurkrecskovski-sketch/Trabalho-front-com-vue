@@ -196,3 +196,18 @@ function concluirServico(item) {
   color: #888;
 }
 
+.busca-wrapper input {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  background-color: #1c1e21;
+  border: 1px solid #3e4247;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.busca-wrapper input:focus { border-color: #e63946; }
+
