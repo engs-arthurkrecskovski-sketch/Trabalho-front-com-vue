@@ -144,3 +144,8 @@ const historicoFiltrado = computed(() => {
   return lista
 })
 
+function limparFiltros() {
+  busca.value = ''
+  filtroStatus.value = ''
+}
+
