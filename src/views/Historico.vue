@@ -42,3 +42,24 @@
               </tr>
             </thead>
             <tbody>
+                 <tr v-for="(item, index) in historicoFiltrado" :key="index">
+                <td>{{ item.cliente }}</td>
+                <td>{{ item.veiculo }}</td>
+                <td>{{ item.servico }}</td>
+                <td>{{ item.data }}</td>
+                <td>
+                  <span v-if="item.status === 'concluido'" class="status concluido">CONCLUÍDO</span>
+                  <span v-else class="status pendente">PENDENTE</span>
+                </td>
+                <td>
+                  <button
+                    v-if="item.status !== 'concluido'"
+                    class="btn-concluir-hist"
+                    @click="concluirServico(item)"
+                    title="Marcar como concluído"
+                  >
+                    <i class="fas fa-check"></i> Concluir
+                  </button>
+                  <span v-else class="txt-ok">—</span>
+                </td>
+              </tr>
