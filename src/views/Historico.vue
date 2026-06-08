@@ -95,3 +95,8 @@ const historico = computed(() =>
     status:  ag.status === 'Concluído' ? 'concluido' : 'pendente',
   }))
 )
+
+const busca         = ref('')
+const filtroStatus  = ref('')
+const colunaOrdem   = ref('')
+const ordemAsc      = ref(true)
