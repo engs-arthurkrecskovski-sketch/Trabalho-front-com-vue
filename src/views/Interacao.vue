@@ -207,3 +207,16 @@ const feedbacks = ref([])
 
 const toastVisivel = ref(false)
 const toastMsg = ref('')
+
+function salvarFeedback() {
+  if (!clienteSelecionado.value || notaFeedback.value === 0) return
+  feedbacks.value.unshift({
+    cliente: clienteSelecionado.value.nome,
+    nota: notaFeedback.value,
+    texto: textoFeedback.value.trim(),
+    hora: horaAtual(),
+  })
+  notaFeedback.value = 0
+  textoFeedback.value = ''
+  mostrarToast('Feedback salvo com sucesso!')
+}
