@@ -311,3 +311,19 @@ tr:hover td { background-color: rgba(255, 255, 255, 0.02); color: #fff; }
   gap: 6px;
 }
 .btn-limpar:hover { background: rgba(230, 57, 70, 0.15); color: #e63946; border-color: #e63946; }
+
+.btn-concluir-hist {
+  background: transparent;
+  border: 1px solid #10b981;
+  color: #10b981;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.btn-concluir-hist:hover { background: rgba(16, 185, 129, 0.15); }
+.txt-ok { color: #444; font-size: 0.85rem; }
