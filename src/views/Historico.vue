@@ -117,3 +117,12 @@ function iconeOrdem(coluna) {
 
 const historicoFiltrado = computed(() => {
   let lista = [...historico.value]
+
+  if (busca.value.trim()) {
+    const termo = busca.value.toLowerCase()
+    lista = lista.filter(item =>
+      item.cliente.toLowerCase().includes(termo) ||
+      item.veiculo.toLowerCase().includes(termo) ||
+      item.servico.toLowerCase().includes(termo)
+    )
+  }
