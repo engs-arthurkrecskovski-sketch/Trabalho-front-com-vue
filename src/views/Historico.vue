@@ -149,3 +149,11 @@ function limparFiltros() {
   filtroStatus.value = ''
 }
 
+function concluirServico(item) {
+  const ag = store.agendamentos.find(
+    a => a.cliente === item.cliente && a.servico === item.servico && a.data === item.data
+  )
+  if (ag) ag.status = 'Concluído'
+}
+</script>
+
