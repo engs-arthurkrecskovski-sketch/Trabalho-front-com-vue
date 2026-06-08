@@ -175,3 +175,10 @@ function concluirServico(item) {
 }
 .header-page p { font-family: 'Open Sans', sans-serif; color: #888; font-size: 1rem; }
 
+.controles {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
