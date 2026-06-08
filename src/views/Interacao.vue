@@ -98,3 +98,17 @@
               <i class="fas fa-star"></i>
               <h3>Registrar Feedback</h3>
             </div>
+
+            <div class="estrelas">
+              <span
+                v-for="n in 5"
+                :key="n"
+                class="estrela"
+                :class="{ ativa: n <= notaFeedback, hover: n <= hoverNota }"
+                @click="notaFeedback = n"
+                @mouseenter="hoverNota = n"
+                @mouseleave="hoverNota = 0"
+              >
+                <i class="fas fa-star"></i>
+              </span>
+            </div>
