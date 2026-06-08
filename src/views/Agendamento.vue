@@ -61,3 +61,9 @@
             placeholder="Detalhes adicionais sobre o veículo ou serviço..."
           ></textarea>
         </div>
+
+         
+        <button class="btn-confirmar" @click="confirmarAgendamento">
+          FINALIZAR AGENDAMENTO <i class="fas fa-check"></i>
+        </button>
+      </div>
