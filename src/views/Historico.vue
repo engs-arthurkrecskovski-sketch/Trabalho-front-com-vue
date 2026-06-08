@@ -268,3 +268,13 @@ td {
 
 tr:hover td { background-color: rgba(255, 255, 255, 0.02); color: #fff; }
 
+.status {
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.status.concluido { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+.status.pendente  { background: rgba(245, 158, 11, 0.15);  color: #f59e0b; }
