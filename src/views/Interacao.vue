@@ -166,3 +166,17 @@ const mensagensAtivas = computed(() => {
   const chave = clienteSelecionado.value.nome
   return historicoMensagens[chave] || []
 })
+
+function trocarCliente() {
+  const chave = clienteSelecionado.value?.nome
+  if (chave && !historicoMensagens[chave]) {
+    historicoMensagens[chave] = [
+      {
+        tipo: 'oficina',
+        texto: `Olá, ${clienteSelecionado.value.nome}! Seu veículo está em análise. Entraremos em contato em breve.`,
+        hora: horaAtual(),
+      }
+    ]
+  }
+  nextTick(rolarParaBaixo)
+}
