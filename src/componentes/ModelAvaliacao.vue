@@ -51,3 +51,17 @@ defineEmits(['sim', 'nao'])
   text-align: center;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
+
+.modal-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.15);
+  border: 2px solid rgba(245, 158, 11, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #f59e0b;
+  margin: 0 auto 1.5rem;
+}
