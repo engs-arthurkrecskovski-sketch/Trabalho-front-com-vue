@@ -98,3 +98,29 @@ function salvarFeedback() {
   textoFeedback.value = ''
 }
 </script>
+
+<style scoped>
+.coluna-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.card-cliente {
+  background: #1c1e21;
+  border-radius: 16px;
+  border: 1px solid #2c2f33;
+  padding: 1.8rem;
+  text-align: center;
+  transition: 0.3s;
+}
+.card-cliente.vazio { opacity: 0.5; }
+
+.card-placeholder {
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.card-placeholder i { font-size: 3rem; }
