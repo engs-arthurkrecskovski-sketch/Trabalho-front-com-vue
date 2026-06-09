@@ -90,5 +90,17 @@ const clientesFiltrados = computed(() => {
   box-shadow: 0 0 15px rgba(230, 57, 70, 0.1);
 }
 
+.cliente-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: #25282c;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  transition: 0.2s;
+}
+.cliente-item:hover { background: #2c2f33; }
+    
 
 </style>
