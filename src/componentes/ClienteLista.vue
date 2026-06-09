@@ -46,3 +46,25 @@ const clientesFiltrados = computed(() => {
 })
 </script>
 
+<style scoped>
+
+.lista-clientes {
+  margin-top: 2rem;
+  background: #1c1e21;
+  border-radius: 20px;
+  padding: 1.5rem;
+  border: 1px solid #2c2f33;
+  animation: fadeIn 0.5s ease;
+}
+
+.lista-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+
+</style>
