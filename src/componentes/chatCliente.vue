@@ -91,3 +91,20 @@ watch(() => props.mensagens?.length, () => {
   flex-direction: column;
   gap: 1rem;
 }
+
+.chat-box {
+  background: #1c1e21;
+  border-radius: 16px;
+  border: 1px solid #2c2f33;
+  min-height: 420px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  scroll-behavior: smooth;
+}
+
+.chat-box::-webkit-scrollbar { width: 5px; }
+.chat-box::-webkit-scrollbar-thumb { background: #3e4247; border-radius: 10px; }
