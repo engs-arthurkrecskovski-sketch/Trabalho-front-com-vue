@@ -182,3 +182,15 @@ watch(() => props.mensagens?.length, () => {
 }
 .chat-input-area:not(.disabled):focus-within { border-color: #e63946; }
 .chat-input-area.disabled { opacity: 0.4; }
+
+.chat-input-area textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 0.92rem;
+  resize: none;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+}
