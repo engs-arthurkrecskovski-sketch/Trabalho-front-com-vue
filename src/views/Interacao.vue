@@ -24,7 +24,6 @@
       </div>
     </div>
 
-     <!-- Toast de confirmação -->
     <div class="toast" :class="{ show: toastVisivel }">
       <i class="fas fa-check-circle"></i> {{ toastMsg }}
     </div>
