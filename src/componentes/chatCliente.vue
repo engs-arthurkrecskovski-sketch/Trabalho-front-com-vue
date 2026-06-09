@@ -10,3 +10,9 @@
         </option>
       </select>
     </div>
+
+    <div class="chat-box" ref="chatBox">
+      <div v-if="!clienteSelecionado" class="chat-vazio">
+        <i class="fas fa-comment-slash"></i>
+        <p>Selecione um cliente para iniciar o atendimento</p>
+      </div>
