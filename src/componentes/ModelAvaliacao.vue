@@ -39,3 +39,15 @@ defineEmits(['sim', 'nao'])
   z-index: 9999;
   backdrop-filter: blur(4px);
 }
+
+.modal {
+  background: #1c1e21;
+  border: 1px solid #2c2f33;
+  border-top: 4px solid #e63946;
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
