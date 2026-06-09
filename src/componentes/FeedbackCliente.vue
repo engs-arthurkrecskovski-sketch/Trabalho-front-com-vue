@@ -86,3 +86,15 @@ const emit = defineEmits(['salvar-feedback'])
 const notaFeedback = ref(0)
 const hoverNota = ref(0)
 const textoFeedback = ref('')
+
+function salvarFeedback() {
+  if (!props.clienteSelecionado || notaFeedback.value === 0) return
+  emit('salvar-feedback', {
+    cliente: props.clienteSelecionado.nome,
+    nota: notaFeedback.value,
+    texto: textoFeedback.value.trim(),
+  })
+  notaFeedback.value = 0
+  textoFeedback.value = ''
+}
+</script>
