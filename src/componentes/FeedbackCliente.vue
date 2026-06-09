@@ -72,3 +72,17 @@
 
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+
+const props = defineProps({
+  clienteSelecionado: Object,
+  feedbacks: Array,
+})
+
+const emit = defineEmits(['salvar-feedback'])
+
+const notaFeedback = ref(0)
+const hoverNota = ref(0)
+const textoFeedback = ref('')
