@@ -86,3 +86,20 @@ defineEmits(['sim', 'nao'])
   flex-direction: column;
   gap: 10px;
 }
+
+.btn-sim {
+  padding: 14px;
+  background: linear-gradient(135deg, #e63946, #c31520);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+.btn-sim:hover { filter: brightness(1.1); transform: translateY(-2px); }
