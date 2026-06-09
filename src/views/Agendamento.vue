@@ -16,7 +16,6 @@
          
           <select v-model="form.cliente" :class="{ 'input-erro': erros.cliente }">
             <option value="" disabled>Selecione um cliente...</option>
-            <!-- v-for renderiza dinamicamente a lista de clientes do store -->
             <option v-for="c in clientesDisponiveis" :key="c.nome" :value="c.nome">
               {{ c.nome }} ({{ c.veiculo }})
             </option>
