@@ -13,6 +13,9 @@
         :ultimo-cadastro="ultimoCadastro"
         @fechar="fecharModal"
       />
+
+      <ClienteLista />
     </div>
     </main>
 </template>
+
