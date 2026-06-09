@@ -117,4 +117,8 @@ const clientesFiltrados = computed(() => {
   transition: 0.3s;
 }
 
+.btn-remover:hover { background: rgba(230, 57, 70, 0.2); color: #e63946; border-color: #e63946; }
+
+.sem-resultado { color: #888; text-align: center; font-size: 0.9rem; padding: 1rem; }
+
 </style>
