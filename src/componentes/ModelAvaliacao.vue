@@ -6,13 +6,13 @@
           <i class="fas fa-star"></i>
         </div>
         <h2>Agendamento realizado!</h2>
-        <p>Deseja avaliar o nosso atendimento? Leva menos de 1 minuto.</p>
+        <p>Deseja avaliar o nosso sistema?</p>
         <div class="modal-acoes">
           <button class="btn-sim" @click="$emit('sim')">
-            <i class="fas fa-thumbs-up"></i> Avaliar agora
+            <i class="fas fa-thumbs-up"></i> Avaliar agora!
           </button>
           <button class="btn-nao" @click="$emit('nao')">
-            Agora não
+            Mais tarde!
           </button>
         </div>
       </div>
@@ -64,4 +64,25 @@ defineEmits(['sim', 'nao'])
   font-size: 1.8rem;
   color: #f59e0b;
   margin: 0 auto 1.5rem;
+}
+
+.modal h2 {
+  font-family: 'Chakra Petch', sans-serif;
+  color: white;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.modal p {
+  color: #888;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.modal-acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
