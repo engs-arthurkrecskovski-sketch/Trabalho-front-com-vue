@@ -87,5 +87,17 @@ function fecharModal() {
 }
 .btn-modal-ok:hover { background: #3e4247; }
 
+.btn-modal-agendar {
+  padding: 0.8rem 1.5rem;
+  background: #e63946;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
 
 </style>
