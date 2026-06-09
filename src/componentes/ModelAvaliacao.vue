@@ -103,3 +103,27 @@ defineEmits(['sim', 'nao'])
   transition: 0.3s;
 }
 .btn-sim:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+.btn-nao {
+  padding: 12px;
+  background: transparent;
+  color: #666;
+  border: 1px solid #3e4247;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-nao:hover { color: #aaa; border-color: #666; }
+
+.modal-enter-active,
+.modal-leave-active {
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+</style>
