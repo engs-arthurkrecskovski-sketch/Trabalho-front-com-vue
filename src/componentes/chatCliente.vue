@@ -194,3 +194,26 @@ watch(() => props.mensagens?.length, () => {
   font-family: 'Inter', sans-serif;
   line-height: 1.5;
 }
+
+.btn-enviar {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #e63946;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-enviar:hover:not(:disabled) { background: #c31520; transform: scale(1.05); }
+.btn-enviar:disabled { opacity: 0.4; cursor: default; }
+
+@media (max-width: 768px) {
+  .chat-box { min-height: 300px; max-height: 300px; }
+}
+</style>
