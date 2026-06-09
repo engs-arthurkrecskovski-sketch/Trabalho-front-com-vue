@@ -64,4 +64,11 @@ function fecharModal() {
   letter-spacing: 1px;
 }
 
+.header-content p { color: #aaa; font-weight: 300; font-size: 1.1rem; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 </style>
