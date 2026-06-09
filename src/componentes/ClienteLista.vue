@@ -107,4 +107,14 @@ const clientesFiltrados = computed(() => {
 .cliente-info span   { color: #888; font-size: 0.8rem; }
 .cliente-info .tel   { color: #10b981; }
 
+.btn-remover {
+  background: transparent;
+  border: 1px solid #3e4247;
+  color: #888;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
 </style>
