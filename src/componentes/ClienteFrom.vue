@@ -114,4 +114,22 @@ label {
   letter-spacing: 1px;
 }
 
+input {
+  width: 100%;
+  padding: 14px;
+  background: #25282c;
+  border: 1px solid #3e4247;
+  border-radius: 12px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #e63946;
+  background: #2c2f33;
+  box-shadow: 0 0 15px rgba(230, 57, 70, 0.1);
+}
 </style>
