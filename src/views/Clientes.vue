@@ -70,5 +70,8 @@ function fecharModal() {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+@media (max-width: 768px) {
+  .header-content h1 { font-size: 2rem; }
+}
 
 </style>
