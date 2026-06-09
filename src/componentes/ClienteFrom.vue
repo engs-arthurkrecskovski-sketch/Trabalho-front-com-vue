@@ -46,7 +46,6 @@ import { reactive } from 'vue'
 import { store } from '../../store/index.js'
 
 const emit = defineEmits(['cadastrado'])
-const emit = defineEmits(['cadastrado'])
 const form = reactive({ nome: '', veiculo: '', telefone: '' })
 const erros = reactive({ nome: '', veiculo: '', telefone: '' })
 
@@ -76,3 +75,22 @@ function validar() {
 
   return valido
 }
+// Limpa o erro de um campo ao começar a digitar
+function limparErro(campo) {
+  erros[campo] = ''
+}
+
+// Cadastra o cliente se a validação passar
+function cadastrarCliente() {
+  if (!validar()) return
+
+  const novoCliente = { ...form }
+  store.adicionarCliente(novoCliente)
+  emit('cadastrado', novoCliente)
+
+  // Limpa o formulário após salvar
+  form.nome     = ''
+  form.veiculo  = ''
+  form.telefone = ''
+}
+</script>
