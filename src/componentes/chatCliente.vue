@@ -61,3 +61,17 @@
 
   </div>
 </template>
+
+<script setup>
+import { ref, watch } from 'vue'
+
+const props = defineProps({
+  clientes: Array,
+  clienteSelecionado: Object,
+  mensagens: Array,
+  novaMensagem: String,
+})
+
+defineEmits(['update:clienteSelecionado', 'update:novaMensagem', 'enviar'])
+
+const chatBox = ref(null)
