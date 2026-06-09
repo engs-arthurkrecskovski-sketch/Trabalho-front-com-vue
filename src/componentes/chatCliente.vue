@@ -127,3 +127,20 @@ watch(() => props.mensagens?.length, () => {
   gap: 10px;
 }
 .msg-wrapper.oficina { flex-direction: row-reverse; }
+
+.msg-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #2c2f33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  color: #888;
+}
+.msg-wrapper.oficina .msg-avatar {
+  background: rgba(230, 57, 70, 0.2);
+  color: #e63946;
+}
