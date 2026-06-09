@@ -66,5 +66,29 @@ const clientesFiltrados = computed(() => {
   gap: 10px;
 }
 
+.lista-header h3 { color: white; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+.lista-header h3 i { color: #e63946; }
+
+.input-busca {
+  width: auto;
+  flex: 1;
+  max-width: 200px;
+  padding: 8px 12px;
+  background: #25282c;
+  border: 1px solid #3e4247;
+  border-radius: 12px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-busca:focus {
+  border-color: #e63946;
+  background: #2c2f33;
+  box-shadow: 0 0 15px rgba(230, 57, 70, 0.1);
+}
+
 
 </style>
