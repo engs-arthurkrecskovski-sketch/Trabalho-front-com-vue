@@ -46,3 +46,33 @@ import { reactive } from 'vue'
 import { store } from '../../store/index.js'
 
 const emit = defineEmits(['cadastrado'])
+const emit = defineEmits(['cadastrado'])
+const form = reactive({ nome: '', veiculo: '', telefone: '' })
+const erros = reactive({ nome: '', veiculo: '', telefone: '' })
+
+function validar() {
+  let valido = true
+
+  if (!form.nome.trim()) {
+    erros.nome = 'Nome é obrigatório.'
+    valido = false
+  } else if (form.nome.trim().length < 2) {
+    erros.nome = 'Nome deve ter ao menos 2 caracteres.'
+    valido = false
+  }
+
+  if (!form.veiculo.trim()) {
+    erros.veiculo = 'Veículo e placa são obrigatórios.'
+    valido = false
+  }
+
+  if (!form.telefone.trim()) {
+    erros.telefone = 'Telefone é obrigatório.'
+    valido = false
+  } else if (!/^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/.test(form.telefone.trim())) {
+    erros.telefone = 'Formato inválido. Ex: (42) 99999-9999'
+    valido = false
+  }
+
+  return valido
+}
