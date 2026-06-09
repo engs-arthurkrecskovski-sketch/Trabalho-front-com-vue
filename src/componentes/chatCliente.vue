@@ -40,3 +40,24 @@
         </div>
       </template>
     </div>
+
+    <div class="chat-input-area" :class="{ disabled: !clienteSelecionado }">
+      <textarea
+        :value="novaMensagem"
+        @input="$emit('update:novaMensagem', $event.target.value)"
+        placeholder="Digite uma mensagem para o cliente..."
+        :disabled="!clienteSelecionado"
+        @keydown.enter.prevent="$emit('enviar')"
+        rows="2"
+      ></textarea>
+      <button
+        class="btn-enviar"
+        @click="$emit('enviar')"
+        :disabled="!clienteSelecionado || !novaMensagem.trim()"
+      >
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+
+  </div>
+</template>
