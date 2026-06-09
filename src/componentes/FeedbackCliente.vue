@@ -145,3 +145,25 @@ function salvarFeedback() {
   font-family: 'Chakra Petch', sans-serif;
   margin-bottom: 0.5rem;
 }
+
+.veiculo-label, .telefone-label {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.servico-ativo { margin-top: 1rem; }
+
+.badge-servico {
+  background: rgba(230, 57, 70, 0.15);
+  color: #e63946;
+  border: 1px solid rgba(230, 57, 70, 0.3);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
