@@ -24,7 +24,25 @@
         <i class="fas fa-trash"></i>
       </button>
     </div>
-
+    
+    <p v-if="clientesFiltrados.length === 0" class="sem-resultado">
+      Nenhum cliente encontrado.
+    </p>
+  </div>
 </template>
 
+<script setup>
+import { ref, computed } from 'vue'
+import { store } from '../../store/index.js'
+
+const busca = ref('')
+
+const clientesFiltrados = computed(() => {
+  const termo = busca.value.toLowerCase()
+  return store.clientes.filter(c =>
+    c.nome.toLowerCase().includes(termo) ||
+    c.veiculo.toLowerCase().includes(termo)
+  )
+})
+</script>
 
