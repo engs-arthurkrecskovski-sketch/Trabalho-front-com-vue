@@ -75,3 +75,19 @@ const props = defineProps({
 defineEmits(['update:clienteSelecionado', 'update:novaMensagem', 'enviar'])
 
 const chatBox = ref(null)
+
+watch(() => props.mensagens?.length, () => {
+  if (chatBox.value) {
+    setTimeout(() => {
+      chatBox.value.scrollTop = chatBox.value.scrollHeight
+    }, 50)
+  }
+})
+</script>
+
+<style scoped>
+.coluna-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
