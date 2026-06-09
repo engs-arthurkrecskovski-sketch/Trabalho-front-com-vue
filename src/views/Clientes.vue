@@ -19,3 +19,21 @@
     </main>
 </template>
 
+<script setup>
+import { ref } from 'vue'
+import ClienteForm from '../components/clientes/ClienteForm.vue'
+import ClienteModal from '../components/clientes/ClienteModal.vue'
+import ClienteLista from '../components/clientes/ClienteLista.vue'
+
+const modalAberto    = ref(false)
+const ultimoCadastro = ref({})
+
+function aoCadastrar(novoCliente) {
+  ultimoCadastro.value = novoCliente
+  modalAberto.value = true
+}
+
+function fecharModal() {
+  modalAberto.value = false
+}
+</script>
