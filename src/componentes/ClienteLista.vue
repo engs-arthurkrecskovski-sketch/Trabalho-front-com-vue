@@ -102,5 +102,9 @@ const clientesFiltrados = computed(() => {
 }
 .cliente-item:hover { background: #2c2f33; }
     
+.cliente-info { display: flex; flex-direction: column; gap: 2px; }
+.cliente-info strong { color: white; font-size: 0.9rem; }
+.cliente-info span   { color: #888; font-size: 0.8rem; }
+.cliente-info .tel   { color: #10b981; }
 
 </style>
