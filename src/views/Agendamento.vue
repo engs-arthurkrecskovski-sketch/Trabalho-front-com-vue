@@ -1,19 +1,16 @@
 <template>
   <main>
     <div class="agendamento-content">
-     
       <div class="header-page">
         <i class="fas fa-calendar-plus header-icon"></i>
         <h1>Novo Agendamento</h1>
         <p>Reserve o horário para o serviço</p>
       </div>
 
-     
       <div class="box-agendar">
 
         <div class="form-group">
           <label><i class="fas fa-user"></i> Cliente Selecionado</label>
-         
           <select v-model="form.cliente" :class="{ 'input-erro': erros.cliente }">
             <option value="" disabled>Selecione um cliente...</option>
             <option v-for="c in clientesDisponiveis" :key="c.nome" :value="c.nome">
@@ -21,7 +18,6 @@
             </option>
           </select>
           <span v-if="erros.cliente" class="msg-erro">{{ erros.cliente }}</span>
-         
           <span v-if="clientesDisponiveis.length === 0" class="msg-aviso">
             <i class="fas fa-info-circle"></i>
             Nenhum cliente cadastrado.
@@ -29,17 +25,16 @@
           </span>
         </div>
 
-         <div class="form-group">
+        <div class="form-group">
           <label><i class="fas fa-oil-can"></i> Tipo de Serviço</label>
           <select v-model="form.servico" :class="{ 'input-erro': erros.servico }">
             <option value="" disabled>Selecione o serviço...</option>
-           
             <option v-for="s in tiposServico" :key="s" :value="s">{{ s }}</option>
           </select>
           <span v-if="erros.servico" class="msg-erro">{{ erros.servico }}</span>
         </div>
 
-         <div class="form-row">
+        <div class="form-row">
           <div class="form-group">
             <label><i class="fas fa-calendar-day"></i> Data</label>
             <input v-model="form.data" type="date" :min="dataMinima" :class="{ 'input-erro': erros.data }" />
@@ -52,7 +47,7 @@
           </div>
         </div>
 
-         <div class="form-group">
+        <div class="form-group">
           <label><i class="fas fa-comment-dots"></i> Observações</label>
           <textarea
             v-model="form.observacoes"
@@ -61,31 +56,28 @@
           ></textarea>
         </div>
 
-         
         <button class="btn-confirmar" @click="confirmarAgendamento">
           FINALIZAR AGENDAMENTO <i class="fas fa-check"></i>
         </button>
       </div>
 
-       
       <div v-if="store.agendamentos.length > 0" class="lista-agendamentos">
         <div class="lista-header">
           <h3><i class="fas fa-calendar-check"></i> Agendamentos Realizados</h3>
 
-           <select v-model="filtroStatus" class="filtro-select">
+          <select v-model="filtroStatus" class="filtro-select">
             <option value="">Todos</option>
             <option value="Confirmado">Confirmado</option>
             <option value="Pendente">Pendente</option>
           </select>
         </div>
 
-         <div
+        <div
           v-for="(ag, i) in agendamentosFiltrados"
           :key="i"
           class="ag-item"
         >
-
-        <div class="ag-info">
+          <div class="ag-info">
             <strong>{{ ag.cliente }}</strong>
             <span>{{ ag.servico }} — {{ ag.data }} às {{ ag.hora }}</span>
             <span v-if="ag.observacoes" class="obs">💬 {{ ag.observacoes }}</span>
@@ -105,8 +97,7 @@
           </div>
         </div>
 
-
-         <p v-if="agendamentosFiltrados.length === 0" class="sem-resultado">
+        <p v-if="agendamentosFiltrados.length === 0" class="sem-resultado">
           Nenhum agendamento encontrado.
         </p>
       </div>
@@ -116,9 +107,10 @@
 
 <script setup>
 import { ref, reactive, computed } from 'vue'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 import { store } from '../store/index.js'
 
+const router = useRouter()
 
 const tiposServico = [
   'Revisão Geral',
@@ -128,9 +120,7 @@ const tiposServico = [
   'Outros (Descrever abaixo)',
 ]
 
-
 const clientesDisponiveis = computed(() => store.clientes)
-
 
 const form = reactive({
   cliente: '',
@@ -140,21 +130,16 @@ const form = reactive({
   observacoes: '',
 })
 
-
 const erros = reactive({ cliente: '', servico: '', data: '', hora: '' })
-
 
 const filtroStatus = ref('')
 
-
 const dataMinima = new Date().toISOString().split('T')[0]
-
 
 const agendamentosFiltrados = computed(() => {
   if (!filtroStatus.value) return store.agendamentos
   return store.agendamentos.filter(a => a.status === filtroStatus.value)
 })
-
 
 function validar() {
   let valido = true
@@ -174,7 +159,6 @@ function validar() {
   return valido
 }
 
-
 function confirmarAgendamento() {
   if (!validar()) return
 
@@ -187,13 +171,15 @@ function confirmarAgendamento() {
     status:      'Pendente',
   })
 
-   form.cliente     = ''
+  form.cliente     = ''
   form.servico     = ''
   form.data        = ''
   form.hora        = ''
   form.observacoes = ''
-}
 
+  store.avaliacaoPendente = true
+  router.push('/historico')
+}
 
 function concluirAgendamento(index) {
   store.agendamentos[index].status = 'Concluído'
@@ -213,7 +199,6 @@ function concluirAgendamento(index) {
   text-transform: uppercase;
   font-weight: 900;
 }
-
 .header-page p { color: #888; font-size: 1rem; }
 
 .box-agendar {
@@ -292,7 +277,6 @@ select:focus, input:focus, textarea:focus {
   box-shadow: 0 10px 20px rgba(230, 57, 70, 0.3);
 }
 
-
 .lista-agendamentos {
   margin-top: 2rem;
   background: #1c1e21;
@@ -349,7 +333,6 @@ select:focus, input:focus, textarea:focus {
   font-size: 0.78rem;
   transition: 0.3s;
 }
-
 .btn-concluir:hover { background: rgba(16, 185, 129, 0.2); }
 
 @keyframes aparecerBox {
