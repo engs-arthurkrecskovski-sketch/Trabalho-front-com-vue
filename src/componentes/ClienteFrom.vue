@@ -75,12 +75,10 @@ function validar() {
 
   return valido
 }
-// Limpa o erro de um campo ao começar a digitar
 function limparErro(campo) {
   erros[campo] = ''
 }
 
-// Cadastra o cliente se a validação passar
 function cadastrarCliente() {
   if (!validar()) return
 
@@ -88,7 +86,6 @@ function cadastrarCliente() {
   store.adicionarCliente(novoCliente)
   emit('cadastrado', novoCliente)
 
-  // Limpa o formulário após salvar
   form.nome     = ''
   form.veiculo  = ''
   form.telefone = ''
