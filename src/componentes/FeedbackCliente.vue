@@ -229,3 +229,45 @@ function salvarFeedback() {
 }
 .btn-feedback:hover:not(:disabled) { filter: brightness(1.1); transform: translateY(-2px); }
 .btn-feedback:disabled { opacity: 0.4; cursor: default; }
+
+.feedbacks-salvos {
+  background: #1c1e21;
+  border-radius: 16px;
+  border: 1px solid #2c2f33;
+  padding: 1.2rem;
+}
+
+.feedbacks-salvos h4 {
+  color: #aaa;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.feedbacks-salvos h4 i { color: #e63946; }
+
+.feedback-item {
+  padding: 12px;
+  background: #25282c;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.fb-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.fb-topo strong { color: white; font-size: 0.85rem; }
+
+.fb-estrelas { display: flex; gap: 3px; }
+.fb-estrelas i { font-size: 0.7rem; color: #3e4247; }
+.fb-estrelas i.lit { color: #f59e0b; }
+
+.feedback-item p { color: #aaa; font-size: 0.82rem; margin-bottom: 6px; }
+.fb-hora { color: #555; font-size: 0.72rem; }
+</style>
