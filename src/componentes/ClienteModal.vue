@@ -61,6 +61,16 @@ function fecharModal() {
 .modal-box h2 { color: white; font-family: 'Michroma', sans-serif; margin-bottom: 0.5rem; }
 .modal-box p  { color: #aaa; margin-bottom: 1rem; }
 
-
+.modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #25282c;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
 
 </style>
