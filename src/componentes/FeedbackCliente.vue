@@ -167,3 +167,21 @@ function salvarFeedback() {
   font-size: 0.78rem;
   font-weight: 600;
 }
+
+.feedback-box {
+  background: #1c1e21;
+  border-radius: 16px;
+  border: 1px solid #2c2f33;
+  padding: 1.5rem;
+}
+
+.feedback-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+  color: #f59e0b;
+}
+.feedback-header h3 { color: white; font-size: 0.95rem; }
+
+.estrelas { display: flex; gap: 8px; margin-bottom: 1rem; }
