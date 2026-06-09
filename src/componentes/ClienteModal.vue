@@ -1,5 +1,4 @@
 <template>
-  <!-- Modal de confirmação — exibido com v-if após cadastro bem-sucedido -->
   <div v-if="modalAberto" class="modal-overlay" @click.self="fecharModal">
     <div class="modal-box">
       <i class="fas fa-check-circle modal-icon"></i>
@@ -18,3 +17,19 @@
     </div>
   </div>
 </template>
+
+
+<script setup>
+import { RouterLink } from 'vue-router'
+
+const props = defineProps({
+  modalAberto: Boolean,
+  ultimoCadastro: Object,
+})
+
+const emit = defineEmits(['fechar'])
+
+function fecharModal() {
+  emit('fechar')
+}
+</script>
