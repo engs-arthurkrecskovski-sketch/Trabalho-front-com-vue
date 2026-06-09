@@ -35,3 +35,14 @@
       />
       <span v-if="erros.telefone" class="msg-erro">{{ erros.telefone }}</span>
     </div>
+        <button class="btn-salvar" @click="cadastrarCliente">
+      CADASTRAR CLIENTE <i class="fas fa-user-check"></i>
+    </button>
+  </div>
+</template>
+
+<script setup>
+import { reactive } from 'vue'
+import { store } from '../../store/index.js'
+
+const emit = defineEmits(['cadastrado'])
