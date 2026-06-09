@@ -163,4 +163,10 @@ input:focus {
   transition: all 0.4s ease;
   margin-top: 1rem;
 }
+
+.btn-salvar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(230, 57, 70, 0.4);
+  filter: brightness(1.1);
+}
 </style>
