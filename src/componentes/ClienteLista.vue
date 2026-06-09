@@ -121,4 +121,13 @@ const clientesFiltrados = computed(() => {
 
 .sem-resultado { color: #888; text-align: center; font-size: 0.9rem; padding: 1rem; }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .lista-header { flex-direction: column; align-items: flex-start; }
+  .input-busca { max-width: 100%; width: 100%; }
+}
 </style>
