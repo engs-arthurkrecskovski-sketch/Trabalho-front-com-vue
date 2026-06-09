@@ -124,3 +124,24 @@ function salvarFeedback() {
   gap: 10px;
 }
 .card-placeholder i { font-size: 3rem; }
+
+.cliente-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(230, 57, 70, 0.15);
+  border: 2px solid rgba(230, 57, 70, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #e63946;
+  margin: 0 auto 1rem;
+}
+
+.card-cliente h3 {
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Chakra Petch', sans-serif;
+  margin-bottom: 0.5rem;
+}
