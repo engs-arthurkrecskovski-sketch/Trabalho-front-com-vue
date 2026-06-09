@@ -91,3 +91,16 @@ function cadastrarCliente() {
   form.telefone = ''
 }
 </script>
+
+<style scoped>
+
+.box-cadastro {
+  background: #1c1e21;
+  padding: 3rem 2.5rem;
+  border-radius: 24px;
+  border-right: 4px solid #e63946;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.form-group { margin-bottom: 1.8rem; }
+</style>
