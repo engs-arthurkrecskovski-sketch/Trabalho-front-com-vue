@@ -56,5 +56,11 @@ function fecharModal() {
   border-top: 4px solid #10b981;
 }
 
+.modal-icon { font-size: 3rem; color: #10b981; margin-bottom: 1rem; }
+
+.modal-box h2 { color: white; font-family: 'Michroma', sans-serif; margin-bottom: 0.5rem; }
+.modal-box p  { color: #aaa; margin-bottom: 1rem; }
+
+
 
 </style>
