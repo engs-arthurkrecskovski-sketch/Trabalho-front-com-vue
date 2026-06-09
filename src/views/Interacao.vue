@@ -2,144 +2,25 @@
   <main>
     <div class="interacao-wrapper">
 
-      <div class="header-page">
-        <div class="header-left">
-          <i class="fas fa-comments header-icon"></i>
-          <div>
-            <h1>Interação com Cliente</h1>
-            <p>Envie mensagens, registre feedbacks e acompanhe o atendimento</p>
-          </div>
-        </div>
-        <div class="status-badge">
-          <i class="fas fa-circle"></i> Atendimento Ativo
-        </div>
-      </div>
+      <InteracaoHeader />
 
       <div class="interacao-grid">
 
-        <div class="coluna-chat">
+        <ChatCliente
+          :clientes="clientes"
+          v-model:clienteSelecionado="clienteSelecionado"
+          v-model:novaMensagem="novaMensagem"
+          :mensagens="mensagensAtivas"
+          @enviar="enviarMensagem"
+          @trocar="trocarCliente"
+        />
 
-          <div class="selector-cliente">
-            <label><i class="fas fa-user"></i> Cliente em Atendimento</label>
-            <select v-model="clienteSelecionado" @change="trocarCliente">
-              <option value="" disabled>Selecione o cliente...</option>
-              <option v-for="c in clientes" :key="c.nome" :value="c">
-                {{ c.nome }} — {{ c.veiculo }}
-              </option>
-            </select>
-          </div>
+        <FeedbackCliente
+          :clienteSelecionado="clienteSelecionado"
+          :feedbacks="feedbacks"
+          @salvar-feedback="salvarFeedback"
+        />
 
-           <div class="chat-box" ref="chatBox">
-            <div v-if="!clienteSelecionado" class="chat-vazio">
-              <i class="fas fa-comment-slash"></i>
-              <p>Selecione um cliente para iniciar o atendimento</p>
-            </div>
-
-            <template v-else>
-              <div
-                v-for="(msg, i) in mensagensAtivas"
-                :key="i"
-                class="msg-wrapper"
-                :class="msg.tipo"
-              >
-                <div class="msg-bubble">
-                  <span class="msg-autor">{{ msg.tipo === 'oficina' ? 'RealCars' : clienteSelecionado.nome }}</span>
-                  <p>{{ msg.texto }}</p>
-                  <span class="msg-hora">{{ msg.hora }}</span>
-                </div>
-                <div class="msg-avatar">
-                  <i :class="msg.tipo === 'oficina' ? 'fas fa-tools' : 'fas fa-user'"></i>
-                </div>
-              </div>
-
-              <div v-if="mensagensAtivas.length === 0" class="chat-vazio">
-                <i class="fas fa-paper-plane"></i>
-                <p>Nenhuma mensagem ainda. Inicie o atendimento!</p>
-              </div>
-            </template>
-          </div>
-
-          <div class="chat-input-area" :class="{ disabled: !clienteSelecionado }">
-            <textarea
-              v-model="novaMensagem"
-              placeholder="Digite uma mensagem para o cliente..."
-              :disabled="!clienteSelecionado"
-              @keydown.enter.prevent="enviarMensagem"
-              rows="2"
-            ></textarea>
-            <button class="btn-enviar" @click="enviarMensagem" :disabled="!clienteSelecionado || !novaMensagem.trim()">
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </div>
-        </div>
-
-        <div class="coluna-info">
-
-          <div class="card-cliente" :class="{ vazio: !clienteSelecionado }">
-            <div v-if="!clienteSelecionado" class="card-placeholder">
-              <i class="fas fa-user-circle"></i>
-              <p>Nenhum cliente selecionado</p>
-            </div>
-            <div v-else>
-              <div class="cliente-avatar">
-                <i class="fas fa-user"></i>
-              </div>
-              <h3>{{ clienteSelecionado.nome }}</h3>
-              <p class="veiculo-label"><i class="fas fa-car"></i> {{ clienteSelecionado.veiculo }}</p>
-              <p class="telefone-label"><i class="fas fa-phone"></i> {{ clienteSelecionado.telefone }}</p>
-              <div class="servico-ativo">
-                <span class="badge-servico">{{ clienteSelecionado.servico }}</span>
-              </div>
-            </div>
-          </div>
-
-            <div class="feedback-box">
-            <div class="feedback-header">
-              <i class="fas fa-star"></i>
-              <h3>Registrar Feedback</h3>
-            </div>
-
-            <div class="estrelas">
-              <span
-                v-for="n in 5"
-                :key="n"
-                class="estrela"
-                :class="{ ativa: n <= notaFeedback, hover: n <= hoverNota }"
-                @click="notaFeedback = n"
-                @mouseenter="hoverNota = n"
-                @mouseleave="hoverNota = 0"
-              >
-                <i class="fas fa-star"></i>
-              </span>
-            </div>
-
-            <textarea
-              v-model="textoFeedback"
-              placeholder="Observações sobre o atendimento..."
-              rows="3"
-              class="textarea-feedback"
-            ></textarea>
-
-            <button class="btn-feedback" @click="salvarFeedback" :disabled="!clienteSelecionado || notaFeedback === 0">
-              <i class="fas fa-save"></i> Salvar Feedback
-            </button>
-          </div>
-
-          <div class="feedbacks-salvos" v-if="feedbacks.length > 0">
-            <h4><i class="fas fa-clipboard-list"></i> Feedbacks Recentes</h4>
-            <div v-for="(fb, i) in feedbacks" :key="i" class="feedback-item">
-              <div class="fb-topo">
-                <strong>{{ fb.cliente }}</strong>
-                <div class="fb-estrelas">
-                  <i v-for="n in 5" :key="n" class="fas fa-star" :class="{ lit: n <= fb.nota }"></i>
-                </div>
-              </div>
-              <p v-if="fb.texto">{{ fb.texto }}</p>
-              <span class="fb-hora">{{ fb.hora }}</span>
-            </div>
-          </div>
-
-          </div>
       </div>
     </div>
 
@@ -150,21 +31,22 @@
 </template>
 
 <script setup>
+import { ref, computed, reactive } from 'vue'
 import { store } from '../store/index.js'
-import { ref, computed, reactive, nextTick } from 'vue'
+
+import InteracaoHeader from '../components/InteracaoHeader.vue'
+import ChatCliente     from '../components/ChatCliente.vue'
+import FeedbackCliente from '../components/FeedbackCliente.vue'
 
 const clientes = computed(() => store.clientes)
 
 const clienteSelecionado = ref(null)
 const novaMensagem = ref('')
-const chatBox = ref(null)
-
 const historicoMensagens = reactive({})
 
 const mensagensAtivas = computed(() => {
   if (!clienteSelecionado.value) return []
-  const chave = clienteSelecionado.value.nome
-  return historicoMensagens[chave] || []
+  return historicoMensagens[clienteSelecionado.value.nome] || []
 })
 
 function trocarCliente() {
@@ -178,7 +60,6 @@ function trocarCliente() {
       }
     ]
   }
-  nextTick(rolarParaBaixo)
 }
 
 function enviarMensagem() {
@@ -191,33 +72,17 @@ function enviarMensagem() {
     hora: horaAtual(),
   })
   novaMensagem.value = ''
-  nextTick(rolarParaBaixo)
 }
 
-function rolarParaBaixo() {
-  if (chatBox.value) {
-    chatBox.value.scrollTop = chatBox.value.scrollHeight
-  }
-}
-
-const notaFeedback = ref(0)
-const hoverNota = ref(0)
-const textoFeedback = ref('')
 const feedbacks = ref([])
-
 const toastVisivel = ref(false)
 const toastMsg = ref('')
 
-function salvarFeedback() {
-  if (!clienteSelecionado.value || notaFeedback.value === 0) return
+function salvarFeedback(dados) {
   feedbacks.value.unshift({
-    cliente: clienteSelecionado.value.nome,
-    nota: notaFeedback.value,
-    texto: textoFeedback.value.trim(),
+    ...dados,
     hora: horaAtual(),
   })
-  notaFeedback.value = 0
-  textoFeedback.value = ''
   mostrarToast('Feedback salvo com sucesso!')
 }
 
@@ -237,3 +102,47 @@ main {
   padding: 2.5rem;
   min-height: 100vh;
 }
+
+.interacao-wrapper { max-width: 1400px; margin: 0 auto; }
+
+.interacao-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1.5rem;
+  animation: entrar 0.7s ease;
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #10b981;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 9999;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+
+@media (max-width: 1100px) {
+  .interacao-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  main { padding: 1.2rem; padding-top: 140px; }
+}
+</style>
