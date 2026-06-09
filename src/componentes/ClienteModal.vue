@@ -99,5 +99,7 @@ function fecharModal() {
   gap: 8px;
   transition: 0.3s;
 }
+.btn-modal-agendar:hover { background: #c31520; }
+
 
 </style>
