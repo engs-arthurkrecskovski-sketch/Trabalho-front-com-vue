@@ -73,4 +73,7 @@ function fecharModal() {
   color: #ccc;
 }
 
+.modal-acoes { display: flex; gap: 10px; justify-content: center; }
+
+
 </style>
