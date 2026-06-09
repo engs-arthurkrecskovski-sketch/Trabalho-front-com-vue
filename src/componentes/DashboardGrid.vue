@@ -51,3 +51,19 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { computed } from 'vue'
+import { RouterLink } from 'vue-router'
+import { store } from '../../store/index.js'
+
+const servicosDestaque = computed(() =>
+  store.agendamentos.slice(0, 5).map((ag, i) => ({
+    id: i,
+    veiculo: store.clientes.find(c => c.nome === ag.cliente)?.veiculo ?? ag.cliente,
+    servico: ag.servico,
+    status:  ag.status === 'Concluído' ? 'CONCLUÍDO' : 'PENDENTE',
+    badgeClass: ag.status === 'Concluído' ? 'badge-verde' : 'badge-amarelo',
+  }))
+)
+</script>
