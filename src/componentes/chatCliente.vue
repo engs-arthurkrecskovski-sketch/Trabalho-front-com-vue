@@ -108,3 +108,22 @@ watch(() => props.mensagens?.length, () => {
 
 .chat-box::-webkit-scrollbar { width: 5px; }
 .chat-box::-webkit-scrollbar-thumb { background: #3e4247; border-radius: 10px; }
+
+.chat-vazio {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #444;
+  font-size: 0.9rem;
+}
+.chat-vazio i { font-size: 2.5rem; }
+
+.msg-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+.msg-wrapper.oficina { flex-direction: row-reverse; }
