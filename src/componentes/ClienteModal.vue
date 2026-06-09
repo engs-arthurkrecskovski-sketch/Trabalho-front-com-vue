@@ -45,3 +45,16 @@ function fecharModal() {
   z-index: 2000;
   animation: fadeIn 0.3s ease;
 }
+
+.modal-box {
+  background: #1c1e21;
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  border-top: 4px solid #10b981;
+}
+
+
+</style>
