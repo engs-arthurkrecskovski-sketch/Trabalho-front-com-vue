@@ -23,3 +23,15 @@
       />
       <span v-if="erros.veiculo" class="msg-erro">{{ erros.veiculo }}</span>
     </div>
+
+    <div class="form-group">
+      <label><i class="fas fa-phone"></i> Telefone de Contato</label>
+      <input
+        v-model="form.telefone"
+        type="text"
+        placeholder="(42) 99999-9999"
+        :class="{ 'input-erro': erros.telefone }"
+        @input="limparErro('telefone')"
+      />
+      <span v-if="erros.telefone" class="msg-erro">{{ erros.telefone }}</span>
+    </div>
