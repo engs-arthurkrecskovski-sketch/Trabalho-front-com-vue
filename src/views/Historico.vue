@@ -1,5 +1,10 @@
 <template>
   <main>
+    <ModalAvaliacao
+      :visivel="modalVisivel"
+      @sim="irParaAvaliacao"
+      @nao="fecharModal"
+    />
     <div class="historico-content">
       <div class="header-page">
         <i class="fas fa-history header-icon"></i>
@@ -24,7 +29,7 @@
         </select>
       </div>
 
-       <div class="box-historico">
+      <div class="box-historico">
         <div class="table-container">
           <table>
             <thead>
@@ -42,7 +47,7 @@
               </tr>
             </thead>
             <tbody>
-                 <tr v-for="(item, index) in historicoFiltrado" :key="index">
+              <tr v-for="(item, index) in historicoFiltrado" :key="index">
                 <td>{{ item.cliente }}</td>
                 <td>{{ item.veiculo }}</td>
                 <td>{{ item.servico }}</td>
@@ -83,8 +88,30 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { store } from '../store/index.js'
+import ModalAvaliacao from '../components/ModalAvaliacao.vue'
+
+const router = useRouter()
+
+const modalVisivel = ref(false)
+
+onMounted(() => {
+  if (store.avaliacaoPendente) {
+    store.avaliacaoPendente = false
+    setTimeout(() => { modalVisivel.value = true }, 2000)
+  }
+})
+
+function irParaAvaliacao() {
+  modalVisivel.value = false
+  router.push('/interacao')
+}
+
+function fecharModal() {
+  modalVisivel.value = false
+}
 
 const historico = computed(() => 
   store.agendamentos.map(ag => ({
@@ -98,8 +125,8 @@ const historico = computed(() =>
 
 const busca         = ref('')
 const filtroStatus  = ref('')
-const colunaOrdem   = ref('')
-const ordemAsc      = ref(true)
+const colunaOrdem   = ref('') 
+const ordemAsc      = ref(true) 
 
 function ordenarPor(coluna) {
   if (colunaOrdem.value === coluna) {
@@ -127,7 +154,7 @@ const historicoFiltrado = computed(() => {
     )
   }
 
-    if (filtroStatus.value) {
+  if (filtroStatus.value) {
     lista = lista.filter(item => item.status === filtroStatus.value)
   }
 
