@@ -85,5 +85,7 @@ function fecharModal() {
   font-size: 0.9rem;
   transition: 0.3s;
 }
+.btn-modal-ok:hover { background: #3e4247; }
+
 
 </style>
