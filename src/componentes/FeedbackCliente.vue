@@ -185,3 +185,11 @@ function salvarFeedback() {
 .feedback-header h3 { color: white; font-size: 0.95rem; }
 
 .estrelas { display: flex; gap: 8px; margin-bottom: 1rem; }
+
+.estrela {
+  font-size: 1.4rem;
+  color: #3e4247;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.estrela.ativa, .estrela.hover { color: #f59e0b; transform: scale(1.15); }
