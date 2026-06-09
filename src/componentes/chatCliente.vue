@@ -144,3 +144,18 @@ watch(() => props.mensagens?.length, () => {
   background: rgba(230, 57, 70, 0.2);
   color: #e63946;
 }
+
+.msg-bubble {
+  max-width: 70%;
+  background: #25282c;
+  border-radius: 16px 16px 16px 4px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.msg-wrapper.oficina .msg-bubble {
+  background: rgba(230, 57, 70, 0.15);
+  border-radius: 16px 16px 4px 16px;
+  border: 1px solid rgba(230, 57, 70, 0.2);
+}
