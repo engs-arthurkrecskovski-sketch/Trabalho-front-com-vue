@@ -169,4 +169,12 @@ input:focus {
   box-shadow: 0 10px 20px rgba(230, 57, 70, 0.4);
   filter: brightness(1.1);
 }
+
+@media (max-width: 768px) {
+  .box-cadastro {
+    padding: 2rem 1.5rem;
+    border-right: none;
+    border-top: 4px solid #e63946;
+  }
+}
 </style>
