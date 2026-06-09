@@ -159,3 +159,26 @@ watch(() => props.mensagens?.length, () => {
   border-radius: 16px 16px 4px 16px;
   border: 1px solid rgba(230, 57, 70, 0.2);
 }
+
+.msg-autor {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #e63946;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.msg-bubble p { color: #e0e0e0; font-size: 0.9rem; line-height: 1.5; }
+.msg-hora { font-size: 0.7rem; color: #666; align-self: flex-end; }
+
+.chat-input-area {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  background: #1c1e21;
+  border: 1px solid #3e4247;
+  border-radius: 16px;
+  padding: 12px;
+  transition: 0.3s;
+}
+.chat-input-area:not(.disabled):focus-within { border-color: #e63946; }
+.chat-input-area.disabled { opacity: 0.4; }
