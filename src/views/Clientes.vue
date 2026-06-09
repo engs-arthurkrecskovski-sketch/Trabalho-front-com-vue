@@ -45,5 +45,16 @@ function fecharModal() {
   width: min(520px, 100%);
   animation: fadeIn 0.8s ease-in-out;
 }
+.header-content {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.header-icon {
+  font-size: 3rem;
+  color: #e63946;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 10px rgba(230, 57, 70, 0.3));
+}
 
 </style>
