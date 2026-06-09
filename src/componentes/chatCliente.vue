@@ -16,3 +16,20 @@
         <i class="fas fa-comment-slash"></i>
         <p>Selecione um cliente para iniciar o atendimento</p>
       </div>
+
+            <template v-else>
+        <div
+          v-for="(msg, i) in mensagens"
+          :key="i"
+          class="msg-wrapper"
+          :class="msg.tipo"
+        >
+          <div class="msg-bubble">
+            <span class="msg-autor">{{ msg.tipo === 'oficina' ? 'RealCars' : clienteSelecionado.nome }}</span>
+            <p>{{ msg.texto }}</p>
+            <span class="msg-hora">{{ msg.hora }}</span>
+          </div>
+          <div class="msg-avatar">
+            <i :class="msg.tipo === 'oficina' ? 'fas fa-tools' : 'fas fa-user'"></i>
+          </div>
+        </div>
