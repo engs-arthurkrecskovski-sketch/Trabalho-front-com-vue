@@ -56,5 +56,12 @@ function fecharModal() {
   margin-bottom: 15px;
   filter: drop-shadow(0 0 10px rgba(230, 57, 70, 0.3));
 }
+.header-content h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-family: 'Michroma', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
 </style>
