@@ -141,4 +141,26 @@ input:focus {
   margin-top: 6px;
   display: block;
 }
+
+
+.btn-salvar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #e63946 0%, #c31520 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 400;
+  font-family: 'Michroma', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  margin-top: 1rem;
+}
 </style>
