@@ -75,5 +75,15 @@ function fecharModal() {
 
 .modal-acoes { display: flex; gap: 10px; justify-content: center; }
 
+.btn-modal-ok {
+  padding: 0.8rem 1.5rem;
+  background: #2c2f33;
+  color: white;
+  border: 1px solid #3e4247;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
 
 </style>
