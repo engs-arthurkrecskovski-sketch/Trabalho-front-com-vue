@@ -37,3 +37,13 @@ function fecharModal() {
   modalAberto.value = false
 }
 </script>
+
+
+<style scoped>
+
+.form-container {
+  width: min(520px, 100%);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+</style>
