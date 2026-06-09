@@ -132,4 +132,13 @@ input:focus {
   background: #2c2f33;
   box-shadow: 0 0 15px rgba(230, 57, 70, 0.1);
 }
+
+.input-erro { border-color: #e63946 !important; }
+
+.msg-erro {
+  color: #e63946;
+  font-size: 0.78rem;
+  margin-top: 6px;
+  display: block;
+}
 </style>
