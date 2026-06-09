@@ -103,4 +103,15 @@ function cadastrarCliente() {
 }
 
 .form-group { margin-bottom: 1.8rem; }
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #efefef;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 </style>
