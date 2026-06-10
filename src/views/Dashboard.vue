@@ -11,9 +11,9 @@
 </template>
 
 <script setup>
-import DashboardHeader from '../components/dashboard/DashboardHeader.vue'
-import DashboardCards from '../components/dashboard/DashboardCards.vue'
-import DashboardGrid from '../components/dashboard/DashboardGrid.vue'
+import DashboardHeader from '../componentes/DashboardHeader.vue'
+import DashboardCards  from '../componentes/DashboardCards.vue'
+import DashboardGrid   from '../componentes/DashboardGrid.vue'
 </script>
 
 <style scoped>

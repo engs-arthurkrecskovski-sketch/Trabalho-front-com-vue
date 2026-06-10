@@ -21,9 +21,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import ClienteForm from '../components/clientes/ClienteForm.vue'
-import ClienteModal from '../components/clientes/ClienteModal.vue'
-import ClienteLista from '../components/clientes/ClienteLista.vue'
+import ClienteForm  from '../componentes/ClienteFrom.vue'
+import ClienteModal from '../componentes/ClienteModal.vue'
+import ClienteLista from '../componentes/ClienteLista.vue'
 
 const modalAberto    = ref(false)
 const ultimoCadastro = ref({})

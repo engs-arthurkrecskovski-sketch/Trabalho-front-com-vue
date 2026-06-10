@@ -91,7 +91,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { store } from '../store/index.js'
-import ModalAvaliacao from '../components/ModalAvaliacao.vue'
+import ModalAvaliacao from '../componentes/ModelAvaliacao.vue'
 
 const router = useRouter()
 

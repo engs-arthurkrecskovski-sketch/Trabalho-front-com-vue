@@ -33,7 +33,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { store } from '../../store/index.js'
+import { store } from '../store/index.js'
 
 const busca = ref('')
 

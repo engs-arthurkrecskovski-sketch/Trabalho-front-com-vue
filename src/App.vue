@@ -9,11 +9,22 @@
 </template>
 
 <script setup>
-import Sidebar from './components/Sidebar.vue'
+import Sidebar from './componentes/Sidebar.vue'
 import { RouterView } from 'vue-router'
 </script>
 
-<style>
+<style scoped>
+#app {
+  display: flex;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
 .whatsapp-float {
   position: fixed;
   bottom: 20px;

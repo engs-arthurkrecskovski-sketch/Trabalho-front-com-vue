@@ -43,7 +43,7 @@
 
 <script setup>
 import { reactive } from 'vue'
-import { store } from '../../store/index.js'
+import { store } from '../store/index.js'
 
 const emit = defineEmits(['cadastrado'])
 const form = reactive({ nome: '', veiculo: '', telefone: '' })

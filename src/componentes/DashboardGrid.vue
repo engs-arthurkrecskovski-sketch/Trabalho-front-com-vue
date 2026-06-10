@@ -55,7 +55,7 @@
 <script setup>
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
-import { store } from '../../store/index.js'
+import { store } from '../store/index.js'
 
 const servicosDestaque = computed(() =>
   store.agendamentos.slice(0, 5).map((ag, i) => ({

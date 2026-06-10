@@ -20,7 +20,7 @@
 
 <script setup>
 import { computed } from 'vue'
-import { store } from '../../store/index.js'
+import { store } from '../store/index.js'
 
 const totalClientes  = computed(() => store.clientes.length)
 const totalPendentes = computed(() =>

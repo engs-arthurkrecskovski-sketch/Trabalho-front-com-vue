@@ -51,8 +51,7 @@
         @click="salvarFeedback"
         :disabled="!clienteSelecionado || notaFeedback === 0"
       >
-        <i class="fas fa-save"></i> Salvar Feedb
-        ck
+        <i class="fas fa-save"></i> Salvar Feedback
       </button>
     </div>
 

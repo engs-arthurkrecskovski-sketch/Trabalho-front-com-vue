@@ -65,7 +65,7 @@ const route = useRoute()
 }
 .sidebar h2 span { color: #c31520; }
 
-.sidebar ul { list-style: none; padding: 0; }
+.sidebar ul { list-style: none; padding: 0; flex-direction: column; }
 
 .sidebar a {
   display: flex;

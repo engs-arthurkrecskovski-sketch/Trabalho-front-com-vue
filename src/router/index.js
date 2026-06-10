@@ -25,22 +25,4 @@ router.afterEach((to) => {
 
 export default router
 
-import { reactive } from 'vue'
 
-export const store = reactive({
-  clientes: [],
-  agendamentos: [],
-  avaliacaoPendente: false,
-
-  adicionarCliente(cliente) {
-    this.clientes.push(cliente)
-  },
-
-  removerCliente(index) {
-    this.clientes.splice(index, 1)
-  },
-
-  adicionarAgendamento(agendamento) {
-    this.agendamentos.push(agendamento)
-  },
-})

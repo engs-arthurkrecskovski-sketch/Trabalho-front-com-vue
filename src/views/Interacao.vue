@@ -34,9 +34,9 @@
 import { ref, computed, reactive } from 'vue'
 import { store } from '../store/index.js'
 
-import InteracaoHeader from '../components/InteracaoHeader.vue'
-import ChatCliente     from '../components/ChatCliente.vue'
-import FeedbackCliente from '../components/FeedbackCliente.vue'
+import InteracaoHeader from '../componentes/InteracaoHeader.vue'
+import ChatCliente     from '../componentes/chatCliente.vue'
+import FeedbackCliente from '../componentes/FeedbackCliente.vue'
 
 const clientes = computed(() => store.clientes)
 
