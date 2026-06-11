@@ -1,38 +1,44 @@
-# Trabalho front
+# REALCARS - Front Vue
 
-This template should help get you started developing with Vue 3 in Vite.
+Projeto frontend de uma concessionária desenvolvido com Vue 3 e Vite, com funcionalidades de dashboard, clientes, agendamentos, histórico e interações.
 
-## Recommended IDE Setup
+## Pré-requisitos
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Ter o Node.js instalado na máquina (versão 18 ou superior). Para verificar se já está instalado, rode no terminal:
 
-## Recommended Browser Setup
+    node -v
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Como rodar o projeto
 
-## Customize configuration
+Primeiro, clone o repositório e entre na pasta:
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+    git clone https://github.com/seu-usuario/Trabalho-front-com-vue.git
+    cd Trabalho-front-com-vue
 
-## Project Setup
+Instale as dependências:
 
-```sh
-npm install
-```
+    npm install
 
-### Compile and Hot-Reload for Development
+Inicie o servidor de desenvolvimento:
 
-```sh
-npm run dev
-```
+    npm run dev
 
-### Compile and Minify for Production
+O projeto vai abrir em http://localhost:5173
 
-```sh
-npm run build
-```
+## Outros comandos
+
+Para gerar a build de produção:
+
+    npm run build
+
+Para visualizar a build antes de publicar:
+
+    npm run preview
+
+## Páginas disponíveis
+
+- / - Dashboard (Painel Geral)
+- /clientes - Gerenciamento de Clientes
+- /agendamento - Agendamentos
+- /historico - Historico
+- /interacao - Interacao com Cliente
